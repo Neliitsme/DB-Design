@@ -1,0 +1,16 @@
+INSERT INTO stoma.medical_histories(user_id, current_health)
+VALUES (1, 'Healthy'),
+       (2, 'Healthy'),
+       (3, 'Healthy'),
+       (4, 'Healthy'),
+       (5, 'Healthy'),
+       (6, 'Healthy'),
+       (7, 'Healthy'),
+       (8, 'Healthy'),
+       (9, 'Healthy'),
+       (10, 'Healthy'),
+       (11, 'Healthy'),
+       (12, 'Healthy'),
+       (13, 'Corona'),
+       (14, 'Healthy'),
+       (15, 'Healthy');
