@@ -1,7 +1,3 @@
--- https://blog.sql-workbench.eu/post/cyclic-foreign-keys/
--- https://dba.stackexchange.com/questions/102903/is-it-acceptable-to-have-circular-foreign-key-references-how-to-avoid-them
-
-
 CREATE TABLE IF NOT EXISTS stoma.users
 (
     id           INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -13,14 +9,6 @@ CREATE TABLE IF NOT EXISTS stoma.users
     birth_date   DATE          NOT NULL,
     gender_id    INT DEFAULT 1 NOT NULL,
     role_id      INT DEFAULT 1 NOT NULL
-
---     FOREIGN KEY (gender_id)
---         REFERENCES stoma.genders (id),
---     FOREIGN KEY (role_id)
---         REFERENCES stoma.user_roles (id),
---     FOREIGN KEY (medical_history_id)
---         REFERENCES stoma.medical_histories (id)
---         ON UPDATE CASCADE
 );
 
 -- Users-to-Clinics Many-to-Many
@@ -31,14 +19,6 @@ CREATE TABLE IF NOT EXISTS stoma.users_clinics
     clinic_id INT NOT NULL,
 
     UNIQUE (user_id, clinic_id)
---     FOREIGN KEY (user_id)
---         REFERENCES stoma.users (id)
---         ON DELETE CASCADE
---         ON UPDATE CASCADE,
---     FOREIGN KEY (clinic_id)
---         REFERENCES stoma.clinics (id)
---         ON DELETE CASCADE
---         ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS stoma.genders
@@ -66,11 +46,6 @@ CREATE TABLE IF NOT EXISTS stoma.clients
 (
     id      INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     user_id INT UNIQUE NOT NULL
-
---     FOREIGN KEY (user_id)
---         REFERENCES stoma.users (id)
---         ON DELETE CASCADE
---         ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS stoma.medical_histories
@@ -95,13 +70,6 @@ CREATE TABLE IF NOT EXISTS stoma.staff
     working_since_date DATE DEFAULT CURRENT_DATE NOT NULL,
     working_since_time TIME DEFAULT CURRENT_TIME NOT NULL,
     staff_role_id      INT                       NOT NULL
-
---     FOREIGN KEY (user_id)
---         REFERENCES stoma.users (id)
---         ON DELETE CASCADE
---         ON UPDATE CASCADE,
---     FOREIGN KEY (staff_role_id)
---         REFERENCES stoma.staff_roles (id)
 );
 
 CREATE TABLE IF NOT EXISTS stoma.staff_roles
@@ -123,13 +91,6 @@ CREATE TABLE IF NOT EXISTS stoma.doctors
     staff_id               INT UNIQUE                                      NOT NULL,
     specialty_id           INT                                             NOT NULL,
     qualification_category stoma.doctor_categories DEFAULT 'Uncategorized' NOT NULL
-
---     FOREIGN KEY (staff_id)
---         REFERENCES stoma.staff (id)
---         ON DELETE CASCADE
---         ON UPDATE CASCADE,
---     FOREIGN KEY (specialty_id)
---         REFERENCES stoma.doctor_specialties (id)
 );
 
 CREATE TABLE IF NOT EXISTS stoma.doctor_specialties
@@ -153,15 +114,6 @@ CREATE TABLE IF NOT EXISTS stoma.appointments
     appointment_type_id INT  NOT NULL,
     appointed_date      DATE NOT NULL,
     appointed_time      TIME NOT NULL
-
---     FOREIGN KEY (client_id)
---         REFERENCES stoma.clients (id)
---         ON UPDATE CASCADE,
---     FOREIGN KEY (doctor_id)
---         REFERENCES stoma.doctors (id)
---         ON UPDATE CASCADE,
---     FOREIGN KEY (appointment_type_id)
---         REFERENCES stoma.appointment_types (id)
 );
 
 CREATE TABLE IF NOT EXISTS stoma.appointment_types
@@ -229,3 +181,4 @@ ALTER TABLE stoma.appointments
         ON UPDATE CASCADE,
     ADD FOREIGN KEY (appointment_type_id)
         REFERENCES stoma.appointment_types (id);
+
