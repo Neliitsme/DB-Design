@@ -1,0 +1,2 @@
+DROP SCHEMA stoma CASCADE;
+CREATE SCHEMA stoma;
