@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  postgres_anonymizer:
+    container_name: postgres_anonymizer_container
+    image: registry.gitlab.com/dalibo/postgresql_anonymizer:latest
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgrespw"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/var/lib/postgresql/data
+    ports:
+      - "6543:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+    networks:
+      - pg-itmo-stoma
+
+networks:
+  pg-itmo-stoma:
+    driver: bridge

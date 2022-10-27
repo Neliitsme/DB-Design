@@ -1,0 +1,1 @@
+SELECT anon.anonymize_database();

@@ -182,3 +182,4 @@ ALTER TABLE stoma.appointments
     ADD FOREIGN KEY (appointment_type_id)
         REFERENCES stoma.appointment_types (id);
 
+-- \copy stoma.users(first_name, last_name, phone_number, birth_date, gender_id, role_id) from 'users-data.csv' delimiter ',' CSV HEADER
