@@ -1,0 +1,16 @@
+first_name.string(),last_name.string(),middle_name.string(),phone_number.string(),email.string(),birth_date.date(2006-01-02),gender.int32(),role.int32(),main_clinic.string()
+Joseph     ,Sanchez  ,Shota,+70000000000,river_schiller28@gmail.com,2013-07-15,1,1,HQ
+Matthew    ,Riley    ,Usoa,+70000000000,schuyler.goyette@yahoo.com,2013-07-15,1,1,HQ
+Steven     ,Shaw     ,Amedeo,+70000000000,jane.brekke73@gmail.com,2013-07-15,3,1,HQ
+Claudia    ,Harrison ,Katerina,+70000000000,henderson_ohara@yahoo.com,2013-07-15,2,2,Biggest
+Daniel     ,Lucas    ,Hormisdas,+70000000000,ashlee_schmeler@hotmail.com,2013-07-15,1,1,Biggest
+Brenda     ,Walsh    ,Giorgi,+70000000000,vergie47@gmail.com,2013-07-15,1,1,HQ
+Jason      ,Davis    ,Stanislava ,+70000000000,tre6@yahoo.com,2013-07-15,1,1,Biggest
+Margaret   ,White    ,Andrea,+70000000000,lydia73@gmail.com,2013-07-15,1,2,Biggest
+Christopher,Shelton  ,Marie-Christine,+70000000000,maymie_robel@gmail.com,2013-07-15,1,2,HQ
+Donald     ,Jones    ,Philippos ,+70000000000,oswaldo.fay54@yahoo.com,2013-07-15,1,1,Biggest
+Gregory    ,Olson    ,Andrzej,+70000000000,donny.braun@yahoo.com,2013-07-15,1,1,Biggest
+Andrew     ,Scott    ,Vitaliano,+70000000000,joseph_labadie57@gmail.com,2013-07-15,3,1,HQ
+John       ,Moore    ,Zornitsa,+70000000000,scottie35@gmail.com,2013-07-15,1,1,HQ
+Dwight     ,Ward     ,Bahdan,+70000000000,marty59@gmail.com,2013-07-15,1,1,Biggest
+Steven     ,Bishop   ,Xochiquetzal,+70000000000,marianne.schulist@yahoo.com,2013-07-15,1,2,Biggest
